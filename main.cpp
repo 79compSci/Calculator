@@ -1,4 +1,4 @@
-#include <iostream>
+include <iostream>
 using namespace std;
 
 int main() {
@@ -13,26 +13,25 @@ int main() {
     cout << "Enter operator (+, -, *, /): ";
     cin >> op;
 
-    // Calculation and output
-    switch (op) {
-        case '+':
-            cout << num1 << " + " << num2 << " = " << (num1 + num2) << endl;
-            break;
-        case '-':
-            cout << num1 << " - " << num2 << " = " << (num1 - num2) << endl;
-            break;
-        case '*':
-            cout << num1 << " * " << num2 << " = " << (num1 * num2) << endl;
-            break;
-        case '/':
-            if (num2 != 0) {
-                cout << num1 << " / " << num2 << " = " << (num1 / num2) << endl;
-            } else {
-                cout << "Error: Division by zero!" << endl;
-            }
-            break;
-        default:
-            cout << "Error: Unsupported operation!" << endl;
+    // Calculation and output using nested if
+    if (op == '+') {
+        cout << num1 << " + " << num2 << " = " << (num1 + num2) << endl;
+    } 
+    else if (op == '-') {
+        cout << num1 << " - " << num2 << " = " << (num1 - num2) << endl;
+    } 
+    else if (op == '*') {
+        cout << num1 << " * " << num2 << " = " << (num1 * num2) << endl;
+    } 
+    else if (op == '/') {
+        if (num2 != 0) {
+            cout << num1 << " / " << num2 << " = " << (num1 / num2) << endl;
+        } else {
+            cout << "Error: Division by zero!" << endl;
+        }
+    } 
+    else {
+        cout << "Error: Unsupported operation!" << endl;
     }
 
     return 0;
